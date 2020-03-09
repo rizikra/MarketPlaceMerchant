@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lin_lay_list"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+         android:id="@+id/img_list"
+         android:layout_width="125dp"
+         android:layout_height="100dp"
+         android:scaleType="fitXY"
+         android:src="@drawable/mi8lite"
+         android:layout_gravity="center_horizontal"/>
+
+    <TextView
+         android:id="@+id/tv_list"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Product"
+         android:textSize="15sp"
+         android:textColor="@color/colorPrimaryDark"
+         android:textAlignment="center"
+         android:gravity="center_horizontal" />
+
+    <TextView
+         android:id="@+id/tv2_list"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:textSize="10sp"
+         android:textAlignment="center"
+         android:textColor="@color/colorPrimary"
+         android:text="Deskripsi"
+         android:gravity="center_horizontal" />
+
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
