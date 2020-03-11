@@ -10,12 +10,16 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/product">
 
         <ImageView
             android:id="@+id/img_des"
@@ -130,6 +134,33 @@
             android:layout_height="wrap_content"
             android:text="text"
             android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/product">
+            
+            <Button
+                android:id="@+id/deleteProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DELETE"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="90dp">
+            </Button>
+
+            <Button
+                android:id="@+id/editProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="EDIT"
+                app:layout_constraintLeft_toRightOf="@id/deleteProduct">
+
+            </Button>
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

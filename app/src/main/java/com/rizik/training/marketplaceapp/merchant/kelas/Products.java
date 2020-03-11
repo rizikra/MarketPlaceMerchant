@@ -10,16 +10,18 @@ public class Products implements Parcelable {
     private int productPrice;
     private int productQty;
     private String productImage;
+    private String productDesc;
     private Merchant merchant;
     private Category category;
 
-    public Products(long productId, String productName, String productSlug, int productPrice, int productQty, String productImage, Merchant merchant, Category category) {
+    public Products(long productId, String productName, String productSlug, int productPrice, int productQty, String productImage, String productDesc, Merchant merchant, Category category) {
         this.productId = productId;
         this.productName = productName;
         this.productSlug = productSlug;
         this.productPrice = productPrice;
         this.productQty = productQty;
         this.productImage = productImage;
+        this.productDesc = productDesc;
         this.merchant = merchant;
         this.category = category;
     }
@@ -48,6 +50,10 @@ public class Products implements Parcelable {
         return productImage;
     }
 
+    public String getProductDesc() {
+        return productDesc;
+    }
+
     public Merchant getMerchant() {
         return merchant;
     }
@@ -69,6 +75,7 @@ public class Products implements Parcelable {
         dest.writeInt(this.productPrice);
         dest.writeInt(this.productQty);
         dest.writeString(this.productImage);
+        dest.writeString(this.productDesc);
         dest.writeParcelable(this.merchant, flags);
         dest.writeParcelable(this.category, flags);
     }
@@ -80,6 +87,7 @@ public class Products implements Parcelable {
         this.productPrice = in.readInt();
         this.productQty = in.readInt();
         this.productImage = in.readString();
+        this.productDesc = in.readString();
         this.merchant = in.readParcelable(Merchant.class.getClassLoader());
         this.category = in.readParcelable(Category.class.getClassLoader());
     }

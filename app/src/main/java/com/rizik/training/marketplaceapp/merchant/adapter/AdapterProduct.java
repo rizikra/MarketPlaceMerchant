@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.MyViewHolder> {
     private Context context;
     private ArrayList<Products> products = new ArrayList<>();
+    private View view;
 
 //    public AdapterRv(Context context, ArrayList<Product> products) {
 //        this.context = context;
@@ -36,14 +37,15 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        LayoutInflater inflater = LayoutInflater.from(context);
+        context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.activity_list_products, parent, false);
+
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
         holder.tvNama.setText(products.get(position).getProductName());
 //        holder.img.setImageResource(products.get(position).getProductImage());
@@ -59,10 +61,9 @@ public class AdapterProduct extends RecyclerView.Adapter<AdapterProduct.MyViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailProduct.class);
 //                intent.putExtra("data", products.get(position));
-
                 String json = new Gson().toJson(products.get(position));
                 intent.putExtra("data", json);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
